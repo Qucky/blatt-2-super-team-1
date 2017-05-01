@@ -8,7 +8,7 @@
 
 #include <iostream>
 
-#include "word_table.hpp"
+#include "../include/word_table.hpp"
 using namespace std;
 
 int main() {

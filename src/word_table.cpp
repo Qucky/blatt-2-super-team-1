@@ -5,7 +5,7 @@
  *      Author: mroeder
  */
 
-#include "word_table.hpp"
+#include "../include/word_table.hpp"
 
 #include <math.h>
 #include <iostream>
