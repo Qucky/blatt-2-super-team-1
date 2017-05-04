@@ -5,6 +5,6 @@ bin/*
 .settings
 .cproject
 Debug
-objects
+obj/*
 *.o
 
