@@ -24,7 +24,7 @@ $(BIN_FOLDER) $(OBJ_FOLDER):
 	@mkdir -p $@
 
 clean:
-	rm -rf $(OBJ_FOLDER)
+	rm -rf $(OBJ_FOLDER)/*.o
 
 veryclean: clean
-	rm -rf $(BIN_FOLDER)
+	rm -rf $(BIN_FOLDER)/*
