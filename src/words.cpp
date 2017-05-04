@@ -16,6 +16,7 @@
 Words::Words(std::string in) {
 	std::list<std::string> split = splitInput(stripInput(in));
 	std::size_t last_pos = 0;
+	mSize = 0;
 	for(std::list<std::string>::iterator it = split.begin(); it != split.end();++it) {
 		std::string word = *it;
 		if(mTables.size() < word.size()+1) {
@@ -27,18 +28,12 @@ Words::Words(std::string in) {
 		}
 		std::size_t pos = in.find(word,last_pos);
 		mTables[word.size()] -> add(word,pos);
+		++mSize;
 		last_pos = pos + word.size() - 1;
 	}
 }
 
-Words::~Words(void) {
-	for(std::vector<table_ptr>::iterator it = mTables.begin(); it != mTables.end();++it) {
-		table_ptr ptr = *it;
-		if(ptr) {
-			delete ptr;
-		}
-	}
-}
+Words::~Words(void) {}
 
 Words::entry_ptr Words::find(std::string word) {
 	entry_ptr result = 0;
@@ -75,6 +70,10 @@ Words::Iterator Words::begin(void) {
 
 Words::Iterator Words::end(void) {
 	return Iterator();
+}
+
+int Words::size(void) {
+	return mSize;
 }
 
 Words Words::fromFile(std::string path) {

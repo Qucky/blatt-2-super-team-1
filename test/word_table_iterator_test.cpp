@@ -6,7 +6,7 @@ protected:
 	virtual void TearDown() {}
 };
 
-TEST(WordTableIterator,Equals) {
+TEST(WordTableIteratorTest,EqualsTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	WordTable::Iterator want = word.begin();
@@ -14,7 +14,7 @@ TEST(WordTableIterator,Equals) {
 	EXPECT_TRUE(want == have);
 }
 
-TEST(WordTableIterator,NotEquals) {
+TEST(WordTableIteratorTest,NotEqualsTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	word.add("baa",0);
@@ -24,7 +24,7 @@ TEST(WordTableIterator,NotEquals) {
 	EXPECT_TRUE(want != have);
 }
 
-TEST(WordTableIterator,Assign) {
+TEST(WordTableIteratorTest,AssignTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	word.add("baa",0);
@@ -35,14 +35,14 @@ TEST(WordTableIterator,Assign) {
 	EXPECT_TRUE(want == have);
 }
 
-TEST(WordTableIterator,Deref) {
+TEST(WordTableIteratorTest,DerefTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	WordTable::Iterator want = word.begin();
 	EXPECT_EQ("foo",(*want).value());
 }
 
-TEST(WordTableIterator,PrefixIncrement) {
+TEST(WordTableIteratorTest,PrefixIncrementTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	word.add("baa",0);
@@ -51,7 +51,7 @@ TEST(WordTableIterator,PrefixIncrement) {
 	EXPECT_TRUE(first == second);
 }
 
-TEST(WordTableIterator,PostfixIncrement) {
+TEST(WordTableIteratorTest,PostfixIncrementTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	word.add("baa",0);

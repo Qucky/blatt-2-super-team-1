@@ -6,12 +6,12 @@ protected:
 	virtual void TearDown() {}
 };
 
-TEST(WordTableEntry, Value) {
+TEST(WordTableEntryTest, ValueTest) {
 	WordTable::Entry entry("foo");
 	EXPECT_EQ("foo",entry.value());
 }
 
-TEST(WordTableEntry, AddPosition) {
+TEST(WordTableEntryTest, AddPositionTest) {
 	WordTable::Entry entry("foo");
 	EXPECT_EQ(0,entry.positions().size());
 	entry.addPosition(42);

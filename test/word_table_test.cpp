@@ -7,7 +7,7 @@ protected:
 	virtual void TearDown() {}
 };
 
-TEST(WordTable, SizeTest) {
+TEST(WordTableTest, SizeTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	EXPECT_EQ(1,word.size());
@@ -15,7 +15,7 @@ TEST(WordTable, SizeTest) {
 	EXPECT_EQ(2,word.size());
 }
 
-TEST(WordTable, IterateTest) {
+TEST(WordTableTest, IterateTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	unsigned short int iteration_count = 0;
@@ -30,7 +30,7 @@ TEST(WordTable, IterateTest) {
 	EXPECT_EQ(1,iteration_count);
 }
 
-TEST(WordTable, AddTest) {
+TEST(WordTableTest, AddTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	std::string want = "foo";
@@ -38,7 +38,7 @@ TEST(WordTable, AddTest) {
 	EXPECT_EQ(want,have);
 }
 
-TEST(WordTable, FindTest) {
+TEST(WordTableTest, FindTest) {
 	WordTable word(3,29);
 	word.add("foo",0);
 	WordTable::entry_ptr ptr = word.find("foo");

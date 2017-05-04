@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.6)
 
 #set(FILES_TO_TEST ../src/word_table.cpp)
+SET(CMAKE_CXX_FLAGS "-std=c++11")
  
 # Locate GTest
 find_package(GTest REQUIRED)

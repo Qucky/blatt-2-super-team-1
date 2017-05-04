@@ -45,12 +45,14 @@ public:
 	std::list<long> positions(std::string);
 	Iterator begin(void);
 	Iterator end(void);
+	int size(void);
 
 	static Words fromFile(std::string);
 	static Words * newFromFile(std::string);
 private:
 	static const int LETTERS_COUNT = (26 * 2) + 10;
 	std::vector<table_ptr> mTables;
+	int mSize;
 	std::string stripInput(std::string);
 	std::list<std::string> splitInput(std::string);
 	static std::string stringFromFile(std::string);
