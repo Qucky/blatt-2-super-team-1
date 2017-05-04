@@ -9,22 +9,13 @@
 #include <iostream>
 
 #include "../include/word_table.hpp"
+#include "../include/words.hpp"
 using namespace std;
 
 int main() {
-	WordTable word(3,29);
-	cout << "before add: " << word << endl;
-	word.add("foo",1);
-	word.add("baa",2);
-	word.add("baz",3);
-	word.add("foo",5);
-	cout << "after add: " << word << endl;
-	WordTable::entry_ptr find = word.find("bazz");
-	if(find) {
-		cout << *find << endl;
-	} else {
-		cout << "not found" << endl;
+	Words w("  foo  123! - > @  @@bar\n   baz\n");
+	for(Words::Iterator it = w.begin(); it != w.end(); ++it) {
+		cout << *it << endl;
 	}
-
 	return 0;
 }
