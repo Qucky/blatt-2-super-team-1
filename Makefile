@@ -20,6 +20,8 @@ $(BIN_FOLDER)/$(EXEC_NAME): $(OBJ_FILES) | $(BIN_FOLDER)
 $(OBJ_FOLDER)/%.o: $(SRC_FOLDER)/%.cpp | $(OBJ_FOLDER)
 	$(CXX) $(CXXFLAGS) -c -o $@ $^
 
+#just a test to see if this is still commited
+
 $(BIN_FOLDER) $(OBJ_FOLDER):
 	@mkdir -p $@
 
