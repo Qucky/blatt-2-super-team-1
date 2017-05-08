@@ -91,7 +91,7 @@ private:
 	int mLength;
 
 	/** Die Hashfunktion.
-	 * Das ist die Summe von den ASCII-Werten der Zeichen potenziert, und 
+	 * Das ist die Summe von den ASCII-Werten der Zeichen potenziert, und */
 	int hash(std::string&);
 	entry_list::iterator findInList(entry_list_ptr,std::string);
 
