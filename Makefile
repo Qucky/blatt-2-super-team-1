@@ -9,6 +9,7 @@ OBJ_FILES = $(addprefix $(OBJ_FOLDER)/, $(OBJ))
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Werror #-Wextra
 #LDLIBS = 
+DOC_FOLDER = doc
 
 .PHONY: all clean veryclean
 
@@ -22,6 +23,9 @@ $(OBJ_FOLDER)/%.o: $(SRC_FOLDER)/%.cpp | $(OBJ_FOLDER)
 
 $(BIN_FOLDER) $(OBJ_FOLDER):
 	@mkdir -p $@
+
+doc:
+	doxygen doc/Doxyfile
 
 clean:
 	rm -rf $(OBJ_FOLDER)/*.o

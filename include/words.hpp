@@ -1,16 +1,20 @@
-/*
- * words.hpp
- *
- *  Created on: 04.05.2017
- *      Author: mroeder
- */
-
 #ifndef WORDS_HPP_
 #define WORDS_HPP_
 
 #include <vector>
 #include <list>
 #include "word_table.hpp"
+
+/**
+ * Die Klasse Words ist verantwortlich für den Speichern und die Verwaltung der
+ * Wörter.
+ *
+ * Eine Words-Klasse ist vorallem ein Vektor mit die Hashtabellen für alle
+ * benötige Wortlänge, und die Methoden über diesen Vektor.
+ *
+ * @author	mroeder
+ * @date 04.05.2017
+ */
 
 class Words {
 public:
