@@ -31,4 +31,4 @@ clean:
 	rm -rf $(OBJ_FOLDER)/*.o
 
 veryclean: clean
-	rm -rf $(BIN_FOLDER)/* $(DOC_FOLDER)/*
+	rm -rf $(BIN_FOLDER)/*

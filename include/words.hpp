@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <list>
+#include "block.hpp"
 #include "word_table.hpp"
 
 /**
@@ -20,14 +21,14 @@ class Words {
 public:
 
 	typedef WordTable* table_ptr;
-	typedef WordTable::entry_ptr entry_ptr;
+	typedef Block::entry_ptr entry_ptr;
 
 	class Iterator {
 	public:
 		Iterator(void);
 		Iterator(std::vector<table_ptr>&);
 		virtual ~Iterator(void);
-		WordTable::Entry operator *(void);
+		Block operator *(void);
 		void operator =(Iterator);
 		bool operator ==(Iterator);
 		bool operator !=(Iterator);
