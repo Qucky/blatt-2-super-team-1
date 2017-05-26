@@ -25,15 +25,6 @@ TEST(WordsTest, PositionsTest) {
 	EXPECT_EQ(2,*w.positions("foo").begin());
 }
 
-TEST(WordsTest, IterateTest) {
-	Words w("  foo  123! - > @  @@bar\n   baz\n");
-	int count = 0;
-	for(Words::Iterator it = w.begin(); it != w.end(); ++it) {
-		++count;
-	}
-	EXPECT_EQ(4,count);
-}
-
 TEST(WordsTest, SizeTest) {
 	Words w("  foo  123! - > @  @@bar\n   baz\n");
 	EXPECT_EQ(4,w.size());

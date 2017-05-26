@@ -1,7 +1,7 @@
 EXEC_NAME = text_hash
 BIN_FOLDER = bin
 SRC_FOLDER = src
-SRC = Main.cpp word_table.cpp words.cpp
+SRC = Main.cpp word_table.cpp block.cpp words.cpp
 SRC_FILES = $(addprefix $(SRC_FOLDER)/, $(SRC))
 OBJ_FOLDER = obj
 OBJ = $(SRC:.cpp=.o)
