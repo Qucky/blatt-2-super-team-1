@@ -22,12 +22,10 @@ public:
 	private:
 		Block::entry_hash::iterator mDataIterator;
 		Block::entry_hash::iterator mDataIteratorEnd;
-		/* Bei der Iterator weißt ich nicht, ob es über die Entries oder die
-		 * Blocks sein sollte */
 		/*Block::entry_list::iterator mListIterator;
 		Block::entry_list::iterator mListIteratorEnd;*/
-		Block::block_list::iterator mListIterator;
-		Block::block_list::iterator mListIteratorEnd;
+		Block::block_list::iterator mBlocksIterator;
+		Block::block_list::iterator mBlocksIteratorEnd;
 		//Block::entry_ptr mCurrent;
 		Block::block_ptr mCurrent;
 		void slideNextData(void);
@@ -38,9 +36,6 @@ public:
 	void add(std::string,long);
 	Iterator begin(void);
 	Iterator end(void);
-	void add(Block::block_list_ptr,Block::entry_ptr);
-	void moveEntries(Block::block_list_ptr);
-	void checkSize();
 	Block::entry_ptr find(std::string);
 	int size(void);
 	friend std::ostream & operator <<(std::ostream&,WordTable&);
@@ -61,6 +56,10 @@ private:
 	int hash1(std::string&);
 	int hash(std::string&);
 	Block::block_list::iterator findInList(Block::block_list_ptr,std::string);
+
+	void add(Block::block_list_ptr,Block::entry_ptr);
+	void moveEntries(Block::block_list_ptr);
+	void checkSize();
 
 };
 

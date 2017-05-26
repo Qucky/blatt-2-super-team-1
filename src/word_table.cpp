@@ -218,12 +218,8 @@ std::ostream & operator <<(std::ostream & out, WordTable & table) {
 		<< ", size => "
 		<< table.mLength;
 	for(WordTable::Iterator it = table.begin(); it != table.end(); ++it){
-		if(it != table.begin()) {
-			out << ", ";
-		} else {
-			out << ", words => [";
-		}
-		out << *it;
+		out << ", "
+			<< *it;
 	}
 	if(table.mLength > 0) {
 		out << "]";
@@ -246,9 +242,9 @@ WordTable::Iterator::Iterator(Block::entry_hash & data) {
 		if(mDataIterator == mDataIteratorEnd) {
 			mCurrent = 0;
 		} else {
-			mListIterator = (*mDataIterator) -> begin();
-			mListIteratorEnd = (*mDataIterator) -> end();
-			mCurrent = *mListIterator;
+			mBlocksIterator = (*mDataIterator) -> begin();
+			mBlocksIteratorEnd = (*mDataIterator) -> end();
+			mCurrent = *mBlocksIterator;
 		}
 	}
 }
@@ -262,8 +258,8 @@ Block WordTable::Iterator::operator *(void) {
 void WordTable::Iterator::operator =(WordTable::Iterator other) {
 	mDataIterator = other.mDataIterator;
 	mDataIteratorEnd = other.mDataIteratorEnd;
-	mListIterator = other.mListIterator;
-	mListIteratorEnd = other.mListIteratorEnd;
+	mBlocksIterator = other.mBlocksIterator;
+	mBlocksIteratorEnd = other.mBlocksIteratorEnd;
 	mCurrent = other.mCurrent;
 }
 
@@ -277,18 +273,18 @@ bool WordTable::Iterator::operator !=(WordTable::Iterator other) {
 
 WordTable::Iterator & WordTable::Iterator::operator ++(void) {
 	if(mCurrent) {
-		++mListIterator;
-		if(mListIterator == mListIteratorEnd) {
+		++mBlocksIterator;
+		if(mBlocksIterator == mBlocksIteratorEnd) {
 			slideNextData();
 			if(mDataIterator == mDataIteratorEnd) {
 				mCurrent = 0;
 			} else {
-				mListIterator = (*mDataIterator) -> begin();
-				mListIteratorEnd = (*mDataIterator) -> end();
-				mCurrent = *mListIterator;
+				mBlocksIterator = (*mDataIterator) -> begin();
+				mBlocksIteratorEnd = (*mDataIterator) -> end();
+				mCurrent = *mBlocksIterator;
 			}
 		} else {
-			mCurrent = *mListIterator;
+			mCurrent = *mBlocksIterator;
 		}
 	}
 	return *this;

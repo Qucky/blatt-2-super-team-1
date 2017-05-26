@@ -1,5 +1,5 @@
-#ifndef WORDS_HPP_
-#define WORDS_HPP_
+#ifndef MOTS_HPP_
+#define MOTS_HPP_
 
 #include <vector>
 #include <list>
@@ -23,37 +23,17 @@ public:
 	typedef WordTable* table_ptr;
 	typedef Block::entry_ptr entry_ptr;
 
-	class Iterator {
-	public:
-		Iterator(void);
-		Iterator(std::vector<table_ptr>&);
-		virtual ~Iterator(void);
-		Block operator *(void);
-		void operator =(Iterator);
-		bool operator ==(Iterator);
-		bool operator !=(Iterator);
-		Iterator & operator ++(void);
-		Iterator operator ++(int);
-	private:
-		int mVectorIndex;
-		WordTable::Iterator mInnerBegin;
-		WordTable::Iterator mInnerEnd;
-		std::vector<table_ptr> mData;
-		void slideNext(void);
-		void reset(void);
-	};
-
 	Words(std::string);
 	virtual ~Words(void);
 	entry_ptr find(std::string);
 	int count(std::string);
 	std::list<long> positions(std::string);
-	Iterator begin(void);
-	Iterator end(void);
 	int size(void);
+	std::vector<table_ptr> tables(void);
 
 	static Words fromFile(std::string);
 	static Words * newFromFile(std::string);
+	friend std::ostream & operator <<(std::ostream&,Words&);
 private:
 	static const int LETTERS_COUNT = (26 * 2) + 10;
 	std::vector<table_ptr> mTables;

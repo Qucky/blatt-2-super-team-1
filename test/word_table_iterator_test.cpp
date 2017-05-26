@@ -7,7 +7,7 @@ protected:
 };
 
 TEST(WordTableIteratorTest,EqualsTest) {
-	WordTable word(3,29);
+	WordTable word(3);
 	word.add("foo",0);
 	WordTable::Iterator want = word.begin();
 	WordTable::Iterator have = word.begin();
@@ -15,7 +15,7 @@ TEST(WordTableIteratorTest,EqualsTest) {
 }
 
 TEST(WordTableIteratorTest,NotEqualsTest) {
-	WordTable word(3,29);
+	WordTable word(3);
 	word.add("foo",0);
 	word.add("baa",0);
 	WordTable::Iterator want = word.begin();
@@ -25,7 +25,7 @@ TEST(WordTableIteratorTest,NotEqualsTest) {
 }
 
 TEST(WordTableIteratorTest,AssignTest) {
-	WordTable word(3,29);
+	WordTable word(3);
 	word.add("foo",0);
 	word.add("baa",0);
 	WordTable::Iterator want = word.begin();
@@ -36,14 +36,17 @@ TEST(WordTableIteratorTest,AssignTest) {
 }
 
 TEST(WordTableIteratorTest,DerefTest) {
-	WordTable word(3,29);
+	WordTable word(3);
 	word.add("foo",0);
 	WordTable::Iterator want = word.begin();
-	EXPECT_EQ("foo",(*want).value());
+	Block::entry_ptr entry = *(*want).entriesList()->begin();
+	EXPECT_EQ("foo",entry->value());
+	//EXPECT_EQ("foo",(*want).entriesList()->begin().value());
+	//EXPECT_EQ("foo",(*want).value());
 }
 
 TEST(WordTableIteratorTest,PrefixIncrementTest) {
-	WordTable word(3,29);
+	WordTable word(3);
 	word.add("foo",0);
 	word.add("baa",0);
 	WordTable::Iterator first = word.begin();
@@ -52,7 +55,7 @@ TEST(WordTableIteratorTest,PrefixIncrementTest) {
 }
 
 TEST(WordTableIteratorTest,PostfixIncrementTest) {
-	WordTable word(3,29);
+	WordTable word(3);
 	word.add("foo",0);
 	word.add("baa",0);
 	WordTable::Iterator first = word.begin();

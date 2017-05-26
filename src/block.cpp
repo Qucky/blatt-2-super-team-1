@@ -4,7 +4,7 @@
 #include <sstream>
 
 Block::Block() {
-	mSize = 1;
+	mSize = 0;
 	mEntries = new entry_list;
 }
 
@@ -68,7 +68,8 @@ Block::entry_list_ptr Block::entriesList() {
 }*/
 
 std::ostream & operator <<(std::ostream & out, const Block & block) {
-	out << "Block{ number of words => "
+	out << std::endl
+		<< "[Block{ number of words => "
 		<< block.mSize;
 	for(Block::entry_list::iterator it = block.mEntries->begin();
 			it != block.mEntries->end();
