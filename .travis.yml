@@ -1,6 +1,6 @@
 sudo: false
 language: cpp
-compiler: gcc
+#compiler: gcc
 dist: jessie
 
 #Variables
@@ -13,8 +13,11 @@ script:
     - test/Main_TestAll
 
 addons:
+    sources:
+        - ubuntu-toolchain-r-test
     apt:
         packages:
+            - g++-4.9
               #- doxygen
 
 #after_success: doxygen
