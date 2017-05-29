@@ -1,6 +1,6 @@
 sudo: false
 language: cpp
-#compiler: gcc
+compiler: gcc
 dist: trusty
 
 #Variables
@@ -12,12 +12,12 @@ script:
     - make
     - test/Main_TestAll
 
-addons:
-    sources:
-        - ubuntu-toolchain-r-test
-    apt:
-        packages:
-            - g++-6
+#addons:
+#    sources:
+#        - ubuntu-toolchain-r-test
+#    apt:
+#        packages:
+            #- g++-6
               #- doxygen
 
 #after_success: doxygen
