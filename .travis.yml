@@ -3,15 +3,18 @@ language: cpp
 compiler: gcc
 
 #Variables
-env:
-    global:
-        - DOXYFILE: $TRAVIS_BUILD_DIR/doc/Doxyfile
+#env:
+#    global:
+#        - DOXYFILE: $TRAVIS_BUILD_DIR/doc/Doxyfile
 
 script:
     - make
     - test/Main_TestAll
 
-#addons:
-#apt: doyxgen
+addons:
+    apt:
+        packages:
+            - g++-4.9
+              #- doxygen
 
 #after_success: doxygen
