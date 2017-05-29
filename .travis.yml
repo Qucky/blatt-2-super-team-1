@@ -10,6 +10,7 @@ dist: trusty
 
 script:
     - make
+    - make test
     - test/Main_TestAll
 
 addons:
