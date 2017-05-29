@@ -29,7 +29,7 @@ Words::Words(std::string in) {
 		std::size_t pos = in.find(word,last_pos);
 		mTables[word.size()] -> add(word,pos);
 		++mSize;
-		last_pos = pos + word.size() - 1;
+		last_pos = pos + (word.size() == 1 ? 1 : word.size() - 1);
 	}
 }
 

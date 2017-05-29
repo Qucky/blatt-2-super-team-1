@@ -1,6 +1,7 @@
 sudo: false
 language: cpp
 compiler: gcc
+dist: jessie
 
 #Variables
 #env:
@@ -14,7 +15,6 @@ script:
 addons:
     apt:
         packages:
-            - g++-4.9
               #- doxygen
 
 #after_success: doxygen
