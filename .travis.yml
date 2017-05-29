@@ -12,12 +12,13 @@ script:
     - make
     - test/Main_TestAll
 
-#addons:
-#    sources:
-#        - ubuntu-toolchain-r-test
-#    apt:
-#        packages:
-            #- g++-6
+addons:
+    sources:
+        - boost-latest
+    apt:
+        packages:
+            - libboost1.55-all-dev
+              #- cmake
               #- doxygen
 
 #after_success: doxygen
