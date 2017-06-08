@@ -23,6 +23,6 @@ addons:
 
 script:
     - cmake CMakeLists.txt && make
-    - test/testAll
+    - bin/testAll
 
 #after_success: doxygen
