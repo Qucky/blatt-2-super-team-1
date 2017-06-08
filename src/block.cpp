@@ -13,7 +13,8 @@ Block::~Block() {}
 /* true falls die Entry in diesem Block eingefügt wurde */
 bool Block::add(std::string value, long position) {
 	entry_list_ptr entries = mEntries;
-	entry_list::iterator it = findInList(entries, value);
+	//entry_list::iterator it = findInList(entries, value);
+	entry_list::iterator it = findInList(value);
 	entry_ptr entry;
 	if(it == entries->end() && isFull())
 		return false;
@@ -28,14 +29,14 @@ bool Block::add(std::string value, long position) {
 	return true;
 }
 
-Block::entry_list::iterator Block::findInList(entry_list_ptr list, std::string value) {
-	for(Block::entry_list::iterator current = list -> begin(); current != list -> end(); ++current) {
+Block::entry_list::iterator Block::findInList(std::string value) {
+	for(Block::entry_list::iterator current = mEntries -> begin(); current != mEntries -> end(); ++current) {
 		entry_ptr ptr = *current;
 		if(ptr -> value() == value) {
 			return current;
 		}
 	}
-	return list -> end();
+	return mEntries -> end();
 }
 
 int & Block::size() {

@@ -1,10 +1,3 @@
-/*
- * word_table.cpp
- *
- *  Created on: 10.04.2017
- *      Author: mroeder
- */
-
 #include "../include/word_table.hpp"
 
 #include <math.h>
@@ -120,7 +113,7 @@ void WordTable::moveEntries(Block::block_list_ptr blocks) {
 }
 
 void WordTable::checkSize() {
-	if(mEntriesAmount / (Block::BLOCK_CAPACITY * mBlockAmount) > limitValue) {
+	if(mLength / (Block::BLOCK_CAPACITY * mBlockAmount) > limitValue) {
 		Block::block_list_ptr blocks = mData[mStepPointer];
 		Block::block_list_ptr newBucket = new Block::block_list;
 		mData.push_back(newBucket);

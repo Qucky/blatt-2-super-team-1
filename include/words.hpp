@@ -36,7 +36,10 @@ public:
 	friend std::ostream & operator <<(std::ostream&,Words&);
 private:
 	static const int LETTERS_COUNT = (26 * 2) + 10;
+	/** Dieser Array enthält die entsprechende Hashtabellen für jede
+	 * Anzahl von Buchstaben */
 	std::vector<table_ptr> mTables;
+	/** Anzahl der Wörter in die gesamte Tabelle */
 	int mSize;
 	std::string stripInput(std::string);
 	std::list<std::string> splitInput(std::string);

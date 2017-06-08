@@ -3,10 +3,10 @@ language: cpp
 compiler: gcc
 dist: trusty
 
-#Variables
-#env:
-#    global:
-#        - DOXYFILE: $TRAVIS_BUILD_DIR/doc/Doxyfile
+Variables
+env:
+    #- DOXYFILE=doc/Doxyfile
+    - PATH
 
 script:
     - make
@@ -21,5 +21,9 @@ addons:
             - libboost1.55-all-dev
               #- cmake
               #- doxygen
+
+script:
+    - cmake CMakeLists.txt && make
+    - test/testAll
 
 #after_success: doxygen
