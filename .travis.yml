@@ -24,4 +24,5 @@ script:
     - cmake CMakeLists.txt && make
     - bin/testAll
 
-after_success: doxygen $DOXYFILE
+after_success: - doxygen $DOXYFILE
+    - firefox doc/html/index.html
