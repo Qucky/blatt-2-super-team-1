@@ -4,7 +4,7 @@ compiler: gcc
 dist: trusty
 
 env:
-    - DOXYFILE=doc/Doxyfile
+    #    - DOXYFILE=doc/Doxyfile
     - PATH
 
 script:
@@ -18,11 +18,10 @@ addons:
     apt:
         packages:
             - libboost1.55-all-dev
-              - doxygen
+#          - doxygen
 
 script:
     - cmake CMakeLists.txt && make
     - bin/testAll
 
-after_success: - doxygen $DOXYFILE
-    - firefox doc/html/index.html
+#after_success: doxygen $DOXYFILE
