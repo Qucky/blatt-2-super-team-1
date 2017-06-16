@@ -1,8 +1,9 @@
-#ifndef WORDS_HPP_
-#define WORDS_HPP_
+#ifndef MOTS_HPP_
+#define MOTS_HPP_
 
 #include <vector>
 #include <list>
+#include "block.h"
 #include "word_table.h"
 
 /**
@@ -20,45 +21,87 @@ class Words {
 public:
 
     typedef WordTable* table_ptr;
-    typedef WordTable::entry_ptr entry_ptr;
-
-    class Iterator {
-    public:
-        Iterator(void);
-        Iterator(std::vector<table_ptr>&);
-        virtual ~Iterator(void);
-        WordTable::Entry operator *(void);
-        void operator =(Iterator);
-        bool operator ==(Iterator);
-        bool operator !=(Iterator);
-        Iterator & operator ++(void);
-        Iterator operator ++(int);
-    private:
-        int mVectorIndex;
-        WordTable::Iterator mInnerBegin;
-        WordTable::Iterator mInnerEnd;
-        std::vector<table_ptr> mData;
-        void slideNext(void);
-        void reset(void);
-    };
+    typedef Block::entry_ptr entry_ptr;
 
     Words(std::string);
     virtual ~Words(void);
+    /**
+     * Sucht nach einer geeigneten Hashtable und gibt als Ergebnis einen entry_ptr zurück falls
+     * das gesuchte Wort gefunden wurde.
+     * @brief find
+     * @return entry_ptr eines Wortes.
+     */
     entry_ptr find(std::string);
+    /**
+     * Gibt die Anzahl aller Vorkommen eines gesuchten Wortes im Text zurück.
+     * @brief count
+     * @return Anzahl Vorkommen des Wortes.
+     */
     int count(std::string);
+    /**
+     * Gibt die genauen Positionen (offset) eines bestimmten Wortes im Text zurück.
+     * @brief positions
+     * @return Positionen aller Vorkommen.
+     */
     std::list<long> positions(std::string);
-    Iterator begin(void);
-    Iterator end(void);
+    /**
+     * Gibt die Anzahl der Wörter der gesamten Tabelle zurück.
+     * @brief size
+     * @return
+     */
     int size(void);
+    /**
+     * List aller tables.
+     * @brief tables
+     * @return
+     */
+    std::vector<table_ptr> tables(void);
 
+    /**
+     * Gibt ein Word-Objekt zurück. Dieses Wort-Objekt wurde ein Text zum speichern übergeben.
+     * @brief fromFile
+     * @return Word-Objekt.
+     */
     static Words fromFile(std::string);
+
+    /**
+     * Gibt ein neues Word-Objekt zurück. Dieses Wort-Objekt wurde ein Text zum speichern übergeben.
+     * @brief fromFile
+     * @return Neues Word-Objekt.
+     */
     static Words * newFromFile(std::string);
+    friend std::ostream & operator <<(std::ostream&,Words&);
 private:
+    /**
+     * a-z, A-Z, 0-9
+     * @brief LETTERS_COUNT
+     */
     static const int LETTERS_COUNT = (26 * 2) + 10;
+    /** Dieser Array enthält die entsprechende Hashtabellen für jede
+     * Anzahl von Buchstaben */
     std::vector<table_ptr> mTables;
+    /** Anzahl der Wörter in die gesamte Tabelle */
     int mSize;
+    /**
+     * Liest einen string und löscht alle Zeichen, die kein whitespace
+     * oder eines der in LETTERS_COUNT beschriebenen Zeichen sind.
+     *
+     * @brief stripInput
+     * @return Angepasster string.
+     */
     std::string stripInput(std::string);
+    /**
+     * Trennt den eingegebenen string bei jedem whitespace.
+     * @brief splitInput
+     * @return Aufsplitteter string.
+     */
     std::list<std::string> splitInput(std::string);
+
+    /**
+     * Liest einen string aus einer Datei.
+     * @brief stringFromFile
+     * @return
+     */
     static std::string stringFromFile(std::string);
 };
 

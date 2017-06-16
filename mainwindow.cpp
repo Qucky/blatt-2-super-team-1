@@ -24,9 +24,10 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_searchButton_clicked()
 {
+    ui->positionInputLabel->setText("");
     std::string searchString = ui->searchEdit->text().toStdString();
 
-    if(!searchString.empty() && word != NULL) {
+    if(word != NULL && !searchString.empty()) {
         Words::entry_ptr entry_ptr = word->find(searchString);
 
         if(entry_ptr != NULL) {
@@ -67,7 +68,8 @@ void MainWindow::on_readButton_clicked()
 {
     if(readText) {
         QString qText = ui->textEdit->toPlainText();
-        std::string text = qText.toUtf8().constData();
+        std::string text = qText.toLocal8Bit().constData();
+
         if(text != "") {
             word = new Words(text);
         }

@@ -13,7 +13,6 @@
 #include <streambuf>
 #include "words.h"
 
-
 Words::Words(std::string in) {
     std::list<std::string> split = splitInput(stripInput(in));
     std::size_t last_pos = 0;
@@ -24,13 +23,13 @@ Words::Words(std::string in) {
             mTables.resize(word.size() + 5);
         }
         if(0 == mTables[word.size()] ) {
-            table_ptr table = new WordTable(word.size(),LETTERS_COUNT);
+            table_ptr table = new WordTable(word.size());
             mTables[word.size()] = table;
         }
         std::size_t pos = in.find(word,last_pos);
         mTables[word.size()] -> add(word,pos);
         ++mSize;
-        last_pos = pos + ( word.size() == 1 ? 1 : word.size() - 1 );
+        last_pos = pos + (word.size() == 1 ? 1 : word.size() - 1);
     }
 }
 
@@ -65,16 +64,12 @@ std::list<long> Words::positions(std::string word) {
     return result;
 }
 
-Words::Iterator Words::begin(void) {
-    return Iterator(mTables);
-}
-
-Words::Iterator Words::end(void) {
-    return Iterator();
-}
-
 int Words::size(void) {
     return mSize;
+}
+
+std::vector<Words::table_ptr> Words::tables(void) {
+    return mTables;
 }
 
 Words Words::fromFile(std::string path) {
@@ -90,7 +85,7 @@ std::string Words::stripInput(std::string in) {
     in.erase(std::remove_if(
         in.begin(),
         in.end(),
-        [&](char c) { return !std::iswblank(c) && !std::isalnum(c); }),
+        [](char c) { return !std::iswblank(c) && !std::isalnum(c); }),
     in.end());
     return in;
 }
@@ -111,7 +106,7 @@ std::list<std::string> Words::splitInput(std::string in) {
 }
 
 std::string Words::stringFromFile(std::string path) {
-    std::ifstream t(path.c_str());
+    std::ifstream t(path);
     std::string str;
 
     t.seekg(0, std::ios::end);
@@ -123,99 +118,27 @@ std::string Words::stringFromFile(std::string path) {
     return str;
 }
 
-Words::Iterator::Iterator(void) {
-    mVectorIndex = 0;
-    mData = std::vector<table_ptr>();
-    mInnerBegin = WordTable::Iterator();
-    mInnerEnd = WordTable::Iterator();
-}
-
-Words::Iterator::Iterator(std::vector<Words::table_ptr> & data) {
-    unsigned int index = 0;
-    while(0 == data[index] && index < data.size()) {
-        ++index;
+/*std::ostream & operator <<(std::ostream & out, Words & w) {
+    out << "Words{ number of words => "
+        << w.mSize;
+    for(Words::Iterator it = w.begin(); it != w.end(); ++it) {
+        out << "WordTable{ word_length => "
+            << std::endl
+            << *it;
     }
-    if(index > 0 && 0 != data[index]) {
-        mVectorIndex = index;
-        mInnerBegin = data[index] -> begin();
-        mInnerEnd = data[index] -> end();
-        mData = data;
-    } else {
-        mVectorIndex = 0;
-        mData = std::vector<table_ptr>();
-        mInnerBegin = WordTable::Iterator();
-        mInnerEnd = WordTable::Iterator();
-    }
-}
+    out << "}";
+    return out;
+}*/
 
-Words::Iterator::~Iterator() {}
-
-WordTable::Entry Words::Iterator::operator *(void) {
-    return *mInnerBegin;
-}
-
-void Words::Iterator::operator =(Words::Iterator other) {
-    mVectorIndex = other.mVectorIndex;
-    mInnerBegin = other.mInnerBegin;
-    mInnerEnd = other.mInnerEnd;
-    mData = other.mData;
-}
-
-bool Words::Iterator::operator ==(Words::Iterator other) {
-    return mVectorIndex == other.mVectorIndex
-            && mInnerBegin == other.mInnerBegin
-            && mInnerEnd == other.mInnerEnd
-            && mData == other.mData;
-}
-
-bool Words::Iterator::operator !=(Words::Iterator other) {
-    return mVectorIndex != other.mVectorIndex
-            || mInnerBegin != other.mInnerBegin
-            || mInnerEnd != other.mInnerEnd
-            || mData != other.mData;
-}
-
-Words::Iterator & Words::Iterator::operator ++(void) {
-    if(*this != Iterator()) {
-        if(mInnerBegin != mInnerEnd) {
-            ++mInnerBegin;
-            if(mInnerBegin == mInnerEnd) {
-                slideNext();
-            }
-        } else {
-            slideNext();
+std::ostream & operator <<(std::ostream & out, Words & w) {
+    out << "Words{ number of words => "
+        << w.mSize;
+    for(std::vector<Words::table_ptr>::iterator it = w.mTables.begin(); it != w.mTables.end(); ++it)
+    {
+        if(*it != 0) {
+            out << std::endl << **it;
         }
     }
-    return *this;
+    out << "}";
+    return out;
 }
-
-Words::Iterator Words::Iterator::operator ++(int dummy) {
-    Iterator copy = *this;
-    ++(*this);
-    return copy;
-}
-
-void Words::Iterator::slideNext(void) {
-    int last = mData.size() - 1;
-    ++mVectorIndex;
-    while(mVectorIndex < last && 0 == mData[mVectorIndex]) {
-        ++mVectorIndex;
-    }
-    if(mData[mVectorIndex]) {
-        mInnerBegin = mData[mVectorIndex] -> begin();
-        mInnerEnd = mData[mVectorIndex] -> end();
-    } else {
-        reset();
-    }
-}
-
-void Words::Iterator::reset(void) {
-    mVectorIndex = 0;
-    mData = std::vector<table_ptr>();
-    mInnerBegin = WordTable::Iterator();
-    mInnerEnd = WordTable::Iterator();
-}
-
-
-
-

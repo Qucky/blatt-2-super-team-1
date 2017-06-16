@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     words.cpp \
-    word_table.cpp
+    word_table.cpp \
+    block.cpp
 
 HEADERS  += mainwindow.h \
     words.h \
-    word_table.h
+    word_table.h \
+    block.h
 
 FORMS    += mainwindow.ui
 
