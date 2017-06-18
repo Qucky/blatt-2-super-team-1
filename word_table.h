@@ -16,7 +16,9 @@
 class WordTable {
 
 public:
-
+    /**
+     * Diese Klasse wird als Iterator für Wörter verwendet.
+     */
     class Iterator {
     public:
         Iterator(void);
