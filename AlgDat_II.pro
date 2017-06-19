@@ -12,16 +12,16 @@ TARGET = AlgDat_II
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    words.cpp \
-    word_table.cpp \
-    block.cpp
+SOURCES += src/main.cpp\
+        src/mainwindow.cpp \
+    src/words.cpp \
+    src/word_table.cpp \
+    src/block.cpp
 
-HEADERS  += mainwindow.h \
-    words.h \
-    word_table.h \
-    block.h
+HEADERS  += include/mainwindow.h \
+    include/words.h \
+    include/word_table.h \
+    include/block.h
 
 FORMS    += mainwindow.ui
 
