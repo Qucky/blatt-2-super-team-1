@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Super Projekt: words.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Super Projekt
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">words.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MOTS_HPP_</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MOTS_HPP_</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;block.h&quot;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;word_table.h&quot;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classWords.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classWords.html">Words</a> {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classWordTable.html">WordTable</a>* <a class="code" href="classWordTable.html">table_ptr</a>;</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classBlock_1_1Entry.html">Block::entry_ptr</a> <a class="code" href="classBlock_1_1Entry.html">entry_ptr</a>;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classWords.html">Words</a>(std::string);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classWords.html">Words</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    entry_ptr <a class="code" href="classWords.html#a81089f161ae9cf14c69a4f6d13c32be0">find</a>(std::string);</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classWords.html#a1322b6e5d58e2beeeb611d2371054a7c">count</a>(std::string);</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    std::list&lt;long&gt; <a class="code" href="classWords.html#adb039ee7d0bdda67c141968a1ee687a1">positions</a>(std::string);</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classWords.html#a1396b487dff9cb78d050ef581711679e">size</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::vector&lt;table_ptr&gt; <a class="code" href="classWords.html#a1bfe5fd93c7e6c419e9fe5f277e0eda8">tables</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> <a class="code" href="classWords.html">Words</a> <a class="code" href="classWords.html#a0e9c8b978ed1fb054365f72ac8c816c8">fromFile</a>(std::string);</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">static</span> <a class="code" href="classWords.html">Words</a> * <a class="code" href="classWords.html#a9e8dfcaea8454e79c47b7f61b6b9e6df">newFromFile</a>(std::string);</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">friend</span> std::ostream &amp; operator &lt;&lt;(std::ostream&amp;,<a class="code" href="classWords.html">Words</a>&amp;);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classWords.html#a0e845bc87a73818cb1f6e4cae1e17c10">   79</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classWords.html#a0e845bc87a73818cb1f6e4cae1e17c10">LETTERS_COUNT</a> = (26 * 2) + 10;</div><div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classWords.html#a221c0b1cb562500e6cd97c58dcc5db1e">   82</a></span>&#160;    std::vector&lt;table_ptr&gt; <a class="code" href="classWords.html#a221c0b1cb562500e6cd97c58dcc5db1e">mTables</a>;</div><div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="classWords.html#ab780209fc62b9a2e2de7daf346918455">   84</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classWords.html#ab780209fc62b9a2e2de7daf346918455">mSize</a>;</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::string <a class="code" href="classWords.html#ae2385f23e8f0c5b519ebe5b03f2bd075">stripInput</a>(std::string);</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::list&lt;std::string&gt; <a class="code" href="classWords.html#ab00ce91814c506d75183d040a8d3c229">splitInput</a>(std::string);</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div><div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="classWords.html#a726d01257bd482c471908e1db5d9119f">stringFromFile</a>(std::string);</div><div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;};</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div><div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* WORDS_HPP_ */</span><span class="preprocessor"></span></div><div class="ttc" id="classWords_html_adb039ee7d0bdda67c141968a1ee687a1"><div class="ttname"><a href="classWords.html#adb039ee7d0bdda67c141968a1ee687a1">Words::positions</a></div><div class="ttdeci">std::list&lt; long &gt; positions(std::string)</div><div class="ttdoc">Gibt die genauen Positionen (offset) eines bestimmten Wortes im Text zurück. </div><div class="ttdef"><b>Definition:</b> words.cpp:58</div></div>
+<div class="ttc" id="classWords_html_a1bfe5fd93c7e6c419e9fe5f277e0eda8"><div class="ttname"><a href="classWords.html#a1bfe5fd93c7e6c419e9fe5f277e0eda8">Words::tables</a></div><div class="ttdeci">std::vector&lt; table_ptr &gt; tables(void)</div><div class="ttdoc">List aller tables. </div><div class="ttdef"><b>Definition:</b> words.cpp:71</div></div>
+<div class="ttc" id="classWords_html_ab780209fc62b9a2e2de7daf346918455"><div class="ttname"><a href="classWords.html#ab780209fc62b9a2e2de7daf346918455">Words::mSize</a></div><div class="ttdeci">int mSize</div><div class="ttdoc">Anzahl der Wörter in die gesamte Tabelle. </div><div class="ttdef"><b>Definition:</b> words.h:84</div></div>
+<div class="ttc" id="classWords_html_a81089f161ae9cf14c69a4f6d13c32be0"><div class="ttname"><a href="classWords.html#a81089f161ae9cf14c69a4f6d13c32be0">Words::find</a></div><div class="ttdeci">entry_ptr find(std::string)</div><div class="ttdoc">Sucht nach einer geeigneten Hashtable und gibt als Ergebnis einen entry_ptr zurück falls das gesuchte...</div><div class="ttdef"><b>Definition:</b> words.cpp:38</div></div>
+<div class="ttc" id="classWords_html_a726d01257bd482c471908e1db5d9119f"><div class="ttname"><a href="classWords.html#a726d01257bd482c471908e1db5d9119f">Words::stringFromFile</a></div><div class="ttdeci">static std::string stringFromFile(std::string)</div><div class="ttdoc">Liest einen string aus einer Datei. </div><div class="ttdef"><b>Definition:</b> words.cpp:108</div></div>
+<div class="ttc" id="classWords_html_a1322b6e5d58e2beeeb611d2371054a7c"><div class="ttname"><a href="classWords.html#a1322b6e5d58e2beeeb611d2371054a7c">Words::count</a></div><div class="ttdeci">int count(std::string)</div><div class="ttdoc">Gibt die Anzahl aller Vorkommen eines gesuchten Wortes im Text zurück. </div><div class="ttdef"><b>Definition:</b> words.cpp:49</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html"><div class="ttname"><a href="classBlock_1_1Entry.html">Block::Entry</a></div><div class="ttdoc">Es gibt für jeden Wort im Text eine Entry in der Hashtabelle. </div><div class="ttdef"><b>Definition:</b> block.h:24</div></div>
+<div class="ttc" id="classWords_html_ae2385f23e8f0c5b519ebe5b03f2bd075"><div class="ttname"><a href="classWords.html#ae2385f23e8f0c5b519ebe5b03f2bd075">Words::stripInput</a></div><div class="ttdeci">std::string stripInput(std::string)</div><div class="ttdoc">Liest einen string und löscht alle Zeichen, die kein whitespace oder eines der in LETTERS_COUNT besch...</div><div class="ttdef"><b>Definition:</b> words.cpp:83</div></div>
+<div class="ttc" id="classWords_html_a9e8dfcaea8454e79c47b7f61b6b9e6df"><div class="ttname"><a href="classWords.html#a9e8dfcaea8454e79c47b7f61b6b9e6df">Words::newFromFile</a></div><div class="ttdeci">static Words * newFromFile(std::string)</div><div class="ttdoc">Gibt ein neues Word-Objekt zurück. </div><div class="ttdef"><b>Definition:</b> words.cpp:79</div></div>
+<div class="ttc" id="classWords_html"><div class="ttname"><a href="classWords.html">Words</a></div><div class="ttdoc">Die Klasse Words ist verantwortlich für den Speichern und die Verwaltung der Wörter. </div><div class="ttdef"><b>Definition:</b> words.h:20</div></div>
+<div class="ttc" id="classWords_html_a221c0b1cb562500e6cd97c58dcc5db1e"><div class="ttname"><a href="classWords.html#a221c0b1cb562500e6cd97c58dcc5db1e">Words::mTables</a></div><div class="ttdeci">std::vector&lt; table_ptr &gt; mTables</div><div class="ttdoc">Dieser Array enthält die entsprechende Hashtabellen für jede Anzahl von Buchstaben. </div><div class="ttdef"><b>Definition:</b> words.h:82</div></div>
+<div class="ttc" id="classWords_html_ab00ce91814c506d75183d040a8d3c229"><div class="ttname"><a href="classWords.html#ab00ce91814c506d75183d040a8d3c229">Words::splitInput</a></div><div class="ttdeci">std::list&lt; std::string &gt; splitInput(std::string)</div><div class="ttdoc">Trennt den eingegebenen string bei jedem whitespace. </div><div class="ttdef"><b>Definition:</b> words.cpp:94</div></div>
+<div class="ttc" id="classWords_html_a1396b487dff9cb78d050ef581711679e"><div class="ttname"><a href="classWords.html#a1396b487dff9cb78d050ef581711679e">Words::size</a></div><div class="ttdeci">int size(void)</div><div class="ttdoc">Gibt die Anzahl der Wörter der gesamten Tabelle zurück. </div><div class="ttdef"><b>Definition:</b> words.cpp:67</div></div>
+<div class="ttc" id="classWords_html_a0e9c8b978ed1fb054365f72ac8c816c8"><div class="ttname"><a href="classWords.html#a0e9c8b978ed1fb054365f72ac8c816c8">Words::fromFile</a></div><div class="ttdeci">static Words fromFile(std::string)</div><div class="ttdoc">Gibt ein Word-Objekt zurück. </div><div class="ttdef"><b>Definition:</b> words.cpp:75</div></div>
+<div class="ttc" id="classWords_html_a0e845bc87a73818cb1f6e4cae1e17c10"><div class="ttname"><a href="classWords.html#a0e845bc87a73818cb1f6e4cae1e17c10">Words::LETTERS_COUNT</a></div><div class="ttdeci">static const int LETTERS_COUNT</div><div class="ttdoc">a-z, A-Z, 0-9 </div><div class="ttdef"><b>Definition:</b> words.h:79</div></div>
+<div class="ttc" id="classWordTable_html"><div class="ttname"><a href="classWordTable.html">WordTable</a></div><div class="ttdoc">Die Klasse WordTable implementiert eine Hashtabelle über Wörter. </div><div class="ttdef"><b>Definition:</b> word_table.h:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Jun 19 2017 08:49:38 für Super Projekt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>

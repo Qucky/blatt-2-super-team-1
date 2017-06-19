@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.11"/>
+<title>Super Projekt: block.h Quellcode</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Super Projekt
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Erzeugt von Doxygen 1.8.11 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Suchen');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Hauptseite</span></a></li>
+      <li><a href="annotated.html"><span>Klassen</span></a></li>
+      <li class="current"><a href="files.html"><span>Dateien</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Suchen" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Auflistung&#160;der&#160;Dateien</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">block.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef BLOCK_HPP_</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define BLOCK_HPP_</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classBlock.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBlock.html">Block</a> {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classBlock_1_1Entry.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classBlock_1_1Entry.html">Entry</a> {</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classBlock_1_1Entry.html#a892793704e9d183ec48fa7dce927de4d">Entry</a>();</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classBlock_1_1Entry.html#a892793704e9d183ec48fa7dce927de4d">Entry</a>(std::string);</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classBlock_1_1Entry.html#a9b19817d0c931b9aba51d7d5afa3d903">~Entry</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::string &amp; <a class="code" href="classBlock_1_1Entry.html#a9c9a683e0b3867d3908bc56b4237c415">value</a>();</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classBlock_1_1Entry.html#a91cfb8665f84cda56edba7fa1fb68c0b">addPosition</a>(<span class="keywordtype">long</span> position);</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        std::list&lt;long&gt; <a class="code" href="classBlock_1_1Entry.html#a196271eb257215aaf05cac38608e89dd">positions</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">friend</span> std::ostream &amp; <a class="code" href="classBlock_1_1Entry.html#a60bf05dcd7b2f19148d9cf24c8e64f28">operator &lt;&lt;</a>(std::ostream&amp;,<span class="keyword">const</span> <a class="code" href="classBlock_1_1Entry.html">Entry</a>&amp;);</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">private</span>:</div><div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classBlock_1_1Entry.html#a501e58cff7748d45eca7aa2b4a7e1232">   46</a></span>&#160;        std::string <a class="code" href="classBlock_1_1Entry.html#a501e58cff7748d45eca7aa2b4a7e1232">mValue</a>;</div><div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classBlock_1_1Entry.html#a414a5db3d3c836f015e76757e92817e2">   48</a></span>&#160;        std::list&lt;long&gt; <a class="code" href="classBlock_1_1Entry.html#a414a5db3d3c836f015e76757e92817e2">mPositions</a>;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    };</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classBlock_1_1Entry.html">Entry</a>* <a class="code" href="classBlock_1_1Entry.html">entry_ptr</a>;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">typedef</span> std::list&lt;entry_ptr&gt; entry_list;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">typedef</span> entry_list* entry_list_ptr;</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classBlock.html#a37658a946bf5067ad01d68d9ff086adc">Block</a>();</div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classBlock.html#a19d1bd0e1cef6a865ed2745a2e648405">~Block</a>();</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classBlock.html#a644b48a49b403ea37640a5c6eeb16c68">add</a>(std::string,<span class="keywordtype">long</span>);</div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    entry_list_ptr <a class="code" href="classBlock.html#aca231f8196edf34e2ab18ae70dfea8d5">entriesList</a>();</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> &amp; <a class="code" href="classBlock.html#a325eada1e1863e252c6abd6d32d5563c">size</a>();</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classBlock.html#a07a8815c763c5b6a947f1a94eb18f47e">isEmpty</a>();</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classBlock.html#a4134a7c7e6e7d08052b65cb4ffe0a09e">isFull</a>();</div><div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classBlock.html#a6714bc4107853cdea00797148e24b5a3">   77</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classBlock.html#a6714bc4107853cdea00797148e24b5a3">BLOCK_CAPACITY</a> = 2;</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">friend</span> std::ostream &amp; <a class="code" href="classBlock_1_1Entry.html#a60bf05dcd7b2f19148d9cf24c8e64f28">operator &lt;&lt;</a>(std::ostream&amp;, <span class="keyword">const</span> <a class="code" href="classBlock.html">Block</a>&amp;);</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">typedef</span> <a class="code" href="classBlock.html">Block</a>* <a class="code" href="classBlock.html">block_ptr</a>;</div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">typedef</span> std::list&lt;block_ptr&gt; block_list;</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">typedef</span> block_list* block_list_ptr;</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">typedef</span> std::vector&lt;block_list_ptr&gt; entry_hash;</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//entry_list::iterator findInList(entry_list_ptr,std::string);</span></div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    entry_list::iterator <a class="code" href="classBlock.html#a1b95fba20ead63089ca14118b8f8e3cb">findInList</a>(std::string);</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classBlock.html#a907358d1f2da114e119afabb0067bb36">   94</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classBlock.html#a907358d1f2da114e119afabb0067bb36">mSize</a>;</div><div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classBlock.html#ad9471ca04615ac53e632c2606843dd3a">   96</a></span>&#160;    entry_list_ptr <a class="code" href="classBlock.html#ad9471ca04615ac53e632c2606843dd3a">mEntries</a>;</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ifndef BLOCK_HPP_ */</span><span class="preprocessor"></span></div><div class="ttc" id="classBlock_html_a6714bc4107853cdea00797148e24b5a3"><div class="ttname"><a href="classBlock.html#a6714bc4107853cdea00797148e24b5a3">Block::BLOCK_CAPACITY</a></div><div class="ttdeci">static const int BLOCK_CAPACITY</div><div class="ttdoc">Ṁaximale Anzahl an Entries. </div><div class="ttdef"><b>Definition:</b> block.h:77</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html_a414a5db3d3c836f015e76757e92817e2"><div class="ttname"><a href="classBlock_1_1Entry.html#a414a5db3d3c836f015e76757e92817e2">Block::Entry::mPositions</a></div><div class="ttdeci">std::list&lt; long &gt; mPositions</div><div class="ttdoc">Die Liste von Stellen des Wortes im Text. </div><div class="ttdef"><b>Definition:</b> block.h:48</div></div>
+<div class="ttc" id="classBlock_html_a644b48a49b403ea37640a5c6eeb16c68"><div class="ttname"><a href="classBlock.html#a644b48a49b403ea37640a5c6eeb16c68">Block::add</a></div><div class="ttdeci">bool add(std::string, long)</div><div class="ttdoc">Fügt ein Wort und seine Stelle in dem Block hinzu. </div><div class="ttdef"><b>Definition:</b> block.cpp:14</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html_a501e58cff7748d45eca7aa2b4a7e1232"><div class="ttname"><a href="classBlock_1_1Entry.html#a501e58cff7748d45eca7aa2b4a7e1232">Block::Entry::mValue</a></div><div class="ttdeci">std::string mValue</div><div class="ttdoc">Die Zeichenkette, die das Wort repräsentiert. </div><div class="ttdef"><b>Definition:</b> block.h:46</div></div>
+<div class="ttc" id="classBlock_html_a07a8815c763c5b6a947f1a94eb18f47e"><div class="ttname"><a href="classBlock.html#a07a8815c763c5b6a947f1a94eb18f47e">Block::isEmpty</a></div><div class="ttdeci">bool isEmpty()</div><div class="ttdef"><b>Definition:</b> block.cpp:46</div></div>
+<div class="ttc" id="classBlock_html_a1b95fba20ead63089ca14118b8f8e3cb"><div class="ttname"><a href="classBlock.html#a1b95fba20ead63089ca14118b8f8e3cb">Block::findInList</a></div><div class="ttdeci">entry_list::iterator findInList(std::string)</div><div class="ttdef"><b>Definition:</b> block.cpp:32</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html"><div class="ttname"><a href="classBlock_1_1Entry.html">Block::Entry</a></div><div class="ttdoc">Es gibt für jeden Wort im Text eine Entry in der Hashtabelle. </div><div class="ttdef"><b>Definition:</b> block.h:24</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html_a9b19817d0c931b9aba51d7d5afa3d903"><div class="ttname"><a href="classBlock_1_1Entry.html#a9b19817d0c931b9aba51d7d5afa3d903">Block::Entry::~Entry</a></div><div class="ttdeci">virtual ~Entry(void)</div><div class="ttdoc">Der Destruktor macht nichts besonders. </div><div class="ttdef"><b>Definition:</b> block.cpp:98</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html_a196271eb257215aaf05cac38608e89dd"><div class="ttname"><a href="classBlock_1_1Entry.html#a196271eb257215aaf05cac38608e89dd">Block::Entry::positions</a></div><div class="ttdeci">std::list&lt; long &gt; positions(void)</div><div class="ttdef"><b>Definition:</b> block.cpp:108</div></div>
+<div class="ttc" id="classBlock_html_a37658a946bf5067ad01d68d9ff086adc"><div class="ttname"><a href="classBlock.html#a37658a946bf5067ad01d68d9ff086adc">Block::Block</a></div><div class="ttdeci">Block()</div><div class="ttdoc">Setzt die Anzahl den Wörter auf 0 und erzeugt eine neue entry_list. </div><div class="ttdef"><b>Definition:</b> block.cpp:6</div></div>
+<div class="ttc" id="classBlock_html_a325eada1e1863e252c6abd6d32d5563c"><div class="ttname"><a href="classBlock.html#a325eada1e1863e252c6abd6d32d5563c">Block::size</a></div><div class="ttdeci">int &amp; size()</div><div class="ttdef"><b>Definition:</b> block.cpp:42</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html_a892793704e9d183ec48fa7dce927de4d"><div class="ttname"><a href="classBlock_1_1Entry.html#a892793704e9d183ec48fa7dce927de4d">Block::Entry::Entry</a></div><div class="ttdeci">Entry()</div><div class="ttdoc">Der Konstruktor ohne Parameter hat kein Effekt. </div><div class="ttdef"><b>Definition:</b> block.cpp:92</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html_a9c9a683e0b3867d3908bc56b4237c415"><div class="ttname"><a href="classBlock_1_1Entry.html#a9c9a683e0b3867d3908bc56b4237c415">Block::Entry::value</a></div><div class="ttdeci">std::string &amp; value()</div><div class="ttdef"><b>Definition:</b> block.cpp:100</div></div>
+<div class="ttc" id="classBlock_html_a4134a7c7e6e7d08052b65cb4ffe0a09e"><div class="ttname"><a href="classBlock.html#a4134a7c7e6e7d08052b65cb4ffe0a09e">Block::isFull</a></div><div class="ttdeci">bool isFull()</div><div class="ttdef"><b>Definition:</b> block.cpp:50</div></div>
+<div class="ttc" id="classBlock_html_a19d1bd0e1cef6a865ed2745a2e648405"><div class="ttname"><a href="classBlock.html#a19d1bd0e1cef6a865ed2745a2e648405">Block::~Block</a></div><div class="ttdeci">~Block()</div><div class="ttdoc">Der Destruktor macht nichts besonderes. </div><div class="ttdef"><b>Definition:</b> block.cpp:11</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html_a91cfb8665f84cda56edba7fa1fb68c0b"><div class="ttname"><a href="classBlock_1_1Entry.html#a91cfb8665f84cda56edba7fa1fb68c0b">Block::Entry::addPosition</a></div><div class="ttdeci">void addPosition(long position)</div><div class="ttdoc">Fügt eine neue Position für das Wort hinzu. </div><div class="ttdef"><b>Definition:</b> block.cpp:104</div></div>
+<div class="ttc" id="classBlock_html_aca231f8196edf34e2ab18ae70dfea8d5"><div class="ttname"><a href="classBlock.html#aca231f8196edf34e2ab18ae70dfea8d5">Block::entriesList</a></div><div class="ttdeci">entry_list_ptr entriesList()</div><div class="ttdef"><b>Definition:</b> block.cpp:54</div></div>
+<div class="ttc" id="classBlock_html_ad9471ca04615ac53e632c2606843dd3a"><div class="ttname"><a href="classBlock.html#ad9471ca04615ac53e632c2606843dd3a">Block::mEntries</a></div><div class="ttdeci">entry_list_ptr mEntries</div><div class="ttdoc">Pointer nach die Liste der Entries. </div><div class="ttdef"><b>Definition:</b> block.h:96</div></div>
+<div class="ttc" id="classBlock_html"><div class="ttname"><a href="classBlock.html">Block</a></div><div class="ttdoc">Die Klasse Block implementiert die Blöcke, wo die Wörter gespeichert werden. </div><div class="ttdef"><b>Definition:</b> block.h:16</div></div>
+<div class="ttc" id="classBlock_html_a907358d1f2da114e119afabb0067bb36"><div class="ttname"><a href="classBlock.html#a907358d1f2da114e119afabb0067bb36">Block::mSize</a></div><div class="ttdeci">int mSize</div><div class="ttdoc">Anzahl der Entries. </div><div class="ttdef"><b>Definition:</b> block.h:94</div></div>
+<div class="ttc" id="classBlock_1_1Entry_html_a60bf05dcd7b2f19148d9cf24c8e64f28"><div class="ttname"><a href="classBlock_1_1Entry.html#a60bf05dcd7b2f19148d9cf24c8e64f28">Block::Entry::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, const Entry &amp;)</div><div class="ttdoc">Gibt das Wort und seien Positionen auf. </div><div class="ttdef"><b>Definition:</b> block.cpp:112</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Erzeugt am Mon Jun 19 2017 08:49:38 für Super Projekt von &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.11
+</small></address>
+</body>
+</html>
