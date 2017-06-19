@@ -8,7 +8,7 @@ env:
     - PATH
 
 script:
-    - make
+    #- make
     - make test
     - test/Main_TestAll
 
@@ -21,7 +21,8 @@ addons:
 #          - doxygen
 
 script:
-    - cmake CMakeLists.txt && make
+    - cmake test/CMakeLists.txt && test/make
+    #- cmake CMakeLists.txt && make
     - bin/testAll
 
 #after_success: doxygen $DOXYFILE
