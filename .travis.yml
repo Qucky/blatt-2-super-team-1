@@ -21,8 +21,9 @@ addons:
 #          - doxygen
 
 script:
-    - cmake test/CMakeLists.txt && test/make
+    - cd test
+    - cmake CMakeLists.txt && make
     #- cmake CMakeLists.txt && make
-    - bin/testAll
+    - ./testAll
 
 #after_success: doxygen $DOXYFILE

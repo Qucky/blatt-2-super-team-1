@@ -31,7 +31,7 @@ TEST(WordsTest, SizeTest) {
 }
 
 TEST(WordsTest, FromFileTest) {
-	Words w = Words::fromFile("test/files/words.data_1.txt");
+	Words w = Words::fromFile("files/words.data_1.txt");
 	EXPECT_EQ(4,w.size());
 	EXPECT_EQ(1,w.count("foo"));
 	EXPECT_EQ(1,w.count("bar"));
@@ -40,7 +40,7 @@ TEST(WordsTest, FromFileTest) {
 }
 
 TEST(WordsTest, NewFromFileTest) {
-	Words * wp = Words::newFromFile("test/files/words.data_1.txt");
+	Words * wp = Words::newFromFile("files/words.data_1.txt");
 	Words w = *wp;
 	EXPECT_EQ(4,w.size());
 	EXPECT_EQ(1,w.count("foo"));
