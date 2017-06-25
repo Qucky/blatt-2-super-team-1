@@ -1,9 +1,9 @@
-/**
-\mainpage The mainpage documentation
-
-This is a simple example of a mainpage you can create yourself.
-Place this inside of a file called `mainpage.dox` and use doxygen.
-If you specified `INPUT` or `FILE_PATTERNS` in your Doxyfile please
-add `.dox` to your file patterns or `mainpage.dox` to your INPUT files.
-*/
-Das ist unsere mainpage
+/*! \mainpage Suche in statischen Texten
+ *
+ * \section Projektbeschreibung
+ *
+ * Unser Programm ermöglicht das einlesen von Texten bzw. Dateien. Die enthaltenen Wörter werden über Hashing-Verfahren gelistet. 
+ * Es ist anschließend möglich nach einzelnen Wörtern zu suchen. Es wird     
+ * Auskunft über das Vorkommen der Wörter gegeben. Dies beinhaltet die Anzahl der Vorkommen sowie die Positionen im Text. 
+ * Dies wird unterstützt durch eine in QT geschriebene Benutzeroberfläche.
+ */
